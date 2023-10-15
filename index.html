@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h2> Tinh Diem </h2>
+        <div>
+            bài tập (20%): <input id="diembaitap" type="number" min="0" max="10" >
+        </div>
+        <div>
+            điểm thực hành (30%): <input id="diemthuchanh" type="number" min="0" max="10">
+        </div>
+        <div>
+            đồ án (50%): <input id="doan" type="number" min="0" max="10">
+        </div>
+        <div>
+            <button id="tinh" type="button" >tính</button>
+
+        </div>
+        <div id="ketqua"></div>
+        <div>
+            lớp 
+            <select  id="lop">
+                <option value="123">1</option>
+                <option value="124">2</option>
+                <option value="125">3</option>
+            </select>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            //function xuly(){
+                //let bt = parseFloat(document.getElementById("diembaitap").value);
+                //let th = parseFloat(document.getElementById("diemthuchanh").value);          
+                //let da = parseFloat(document.getElementById("doan").value);
+                //let kq = (bt*0.2 + th*0.3 + da*0.5);
+                //alert (kq);
+                //document.getElementById("ketqua").querySelector("output").textContent = kq;
+                //document.getElementById("ketqua").innerHTML = "kết quả: " + kq;
+            //}
+            $(document).ready(function(){
+                $("#tinh").click(function(){
+                    let bt = parseFloat($("#diembaitap").val());
+                    let th = parseFloat($("#diemthuchanh").val());
+                    let da = parseFloat($("#doan").val());
+
+                    let kq = (bt*0.2 + th*0.3 + da*0.5);
+                    //alert (kq);
+                    // Hiển thị kết quả của bài tập trong phần tử `div` có ID là `ketqua`
+                    $("#ketqua").text(kq);
+                })
+                $("#lop").click(function(){
+                    alert($("#lop").val())
+                })
+            })
+        </script>
+</body>
+</html>
